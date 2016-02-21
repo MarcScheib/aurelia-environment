@@ -1,0 +1,118 @@
+{
+  "name": "aurelia-environment",
+  "version": "0.0.1",
+  "description": "An environment plugin for Aurelia.",
+  "keywords": [
+    "aurelia",
+    "environment",
+    "plugin"
+  ],
+  "homepage": "http://aurelia.io",
+  "bugs": {
+    "url": "https://github.com/MarcScheib/aurelia-environment/issues"
+  },
+  "license": "MIT",
+  "author": "Marc Scheib <marc.scheib@cycrilab.com>",
+  "main": "dist/commonjs/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcScheib/aurelia-environment"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "ci": "gulp ci"
+  },
+  "jspmNodeConversion": false,
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "lib": "dist/amd"
+    },
+    "dependencies": {
+      "aurelia-dependency-injection": "^1.0.0-beta.1.1.3",
+      "aurelia-framework": "^1.0.0-beta.1.1.3",
+      "aurelia-metadata": "^1.0.0-beta.1.1.4",
+      "aurelia-templating": "^1.0.0-beta.1.1.1"
+    },
+    "devDependencies": {
+      "babel": "babel-core@^5.8.24",
+      "babel-runtime": "^5.8.24",
+      "core-js": "^2.0.3"
+    },
+    "overrides": {
+      "npm:core-js@2.0.3": {
+        "main": "client/shim.min"
+      }
+    }
+  },
+  "dependencies": {
+    "aurelia-dependency-injection": "^1.0.0-beta.1.1.3",
+    "aurelia-framework": "^1.0.0-beta.1.1.3",
+    "aurelia-metadata": "^1.0.0-beta.1.1.4",
+    "aurelia-templating": "^1.0.0-beta.1.1.1"
+  },
+  "devDependencies": {
+    "aurelia-tools": "^0.1.18",
+    "babel-dts-generator": "^0.2.17",
+    "babel-eslint": "^4.1.1",
+    "browser-sync": "^2.10.0",
+    "conventional-changelog": "^0.4.2",
+    "del": "^1.2.1",
+    "event-stream": "^3.3.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-bump": "^1.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-coveralls": "0.1.4",
+    "gulp-eslint": "^1.0.0",
+    "gulp-insert": "^0.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-typedoc": "^1.2.1",
+    "gulp-typedoc-extractor": "0.0.8",
+    "isparta": "4.0.0",
+    "istanbul": "github:gotwarlost/istanbul#source-map",
+    "jasmine-core": "^2.3.4",
+    "jspm": "^0.16.15",
+    "karma": "^0.13.19",
+    "karma-babel-preprocessor": "^5.2.2",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "github:douglasduteil/karma-coverage#next",
+    "karma-jasmine": "^0.3.6",
+    "karma-jspm": "^2.0.1",
+    "karma-sourcemap-loader": "0.3.6",
+    "object.assign": "^4.0.1",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.2",
+    "through2": "^2.0.0",
+    "vinyl": "^0.5.3",
+    "vinyl-paths": "^1.0.0",
+    "yargs": "^3.21.0"
+  },
+  "aurelia": {
+    "usedBy": [],
+    "documentation": {
+      "links": [
+        {
+          "rel": "license",
+          "mediaType": "text/plain",
+          "title": "The MIT License (MIT)",
+          "href": "LICENSE"
+        },
+        {
+          "rel": "describedby",
+          "mediaType": "application/aurelia-doc+json",
+          "title": "API",
+          "href": "doc/api.json"
+        },
+        {
+          "rel": "version-history",
+          "mediaType": "text/markdown",
+          "title": "Change Log",
+          "href": "doc/CHANGELOG.md"
+        }
+      ]
+    }
+  }
+}
