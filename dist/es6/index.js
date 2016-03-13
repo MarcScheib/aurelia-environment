@@ -1,6 +1,6 @@
 let defaultOptions = {
-  path: './src/',
-  file: '.env'
+  path: './',
+  file: 'package.json'
 };
 
 function isFileApiAvailable() {
@@ -18,7 +18,7 @@ export function load(options : any) {
 
   let _options = Object.assign({}, options, defaultOptions);
   let envFile = new XMLHttpRequest();
-  envFile.open("GET", _options.path + _options.file, false);
+  envFile.open('GET', _options.path + _options.file, true);
   envFile.send();
 }
 

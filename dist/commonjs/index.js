@@ -4,8 +4,8 @@ exports.__esModule = true;
 exports.load = load;
 exports.parse = parse;
 var defaultOptions = {
-  path: './src/',
-  file: '.env'
+  path: './',
+  file: 'package.json'
 };
 
 function isFileApiAvailable() {
@@ -23,7 +23,7 @@ function load(options) {
 
   var _options = Object.assign({}, options, defaultOptions);
   var envFile = new XMLHttpRequest();
-  envFile.open("GET", _options.path + _options.file, false);
+  envFile.open('GET', _options.path + _options.file, true);
   envFile.send();
 }
 

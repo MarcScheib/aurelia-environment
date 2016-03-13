@@ -24,7 +24,7 @@ define(['exports'], function (exports) {
 
     var _options = Object.assign({}, options, defaultOptions);
     var envFile = new XMLHttpRequest();
-    envFile.open("GET", _options.path + _options.file, false);
+    envFile.open('GET', _options.path + _options.file, true);
     envFile.send();
   }
 
