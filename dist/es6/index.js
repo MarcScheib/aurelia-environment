@@ -1,27 +1,59 @@
 let defaultOptions = {
   path: './',
-  file: 'package.json'
+  file: 'aurelia.env'
 };
 
-function isFileApiAvailable() {
-  if (window.File && window.FileReader && window.FileList && window.Blob) {
-    return true;
-  }
-
-  return false;
-}
-
-export function load(options : any) {
-  if (isFileApiAvailable() === false) {
-    console.log('File api is not available to load the aurelia environment.');
-  }
-
+export function load(options) {
+  window.env = {};
   let _options = Object.assign({}, options, defaultOptions);
-  let envFile = new XMLHttpRequest();
-  envFile.open('GET', _options.path + _options.file, true);
-  envFile.send();
+
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', _options.path + _options.file);
+    xhr.onload = function() {
+      if (this.status >= 200 && this.status < 300) {
+        let parsedObject = parse(xhr.response);
+        Object.keys(parsedObject).forEach(key => {
+          window.env[key] = parsedObject[key];
+        });
+
+        resolve();
+      } else {
+        reject({
+          status: this.status,
+          statusText: xhr.statusText
+        });
+      }
+    };
+
+    xhr.onerror = function() {
+      reject({
+        status: this.status,
+        statusText: xhr.statusText
+      });
+    };
+
+    xhr.send();
+  });
 }
 
-export function parse(content : string) {
+function parse(content) {
+  let obj = {};
 
+  content.split('\n').forEach(line => {
+    let keyValueArr = line.match(/^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/);
+    if (keyValueArr !== null) {
+      let key = keyValueArr[1];
+      let value = keyValueArr[2] ? keyValueArr[2] : '';
+      let len = value ? value.length : 0;
+      if (len > 0 && value.charAt(0) === '\"' && value.charAt(len - 1) === '\"') {
+        value = value.replace(/\\n/gm, '\n');
+      }
+      value = value.replace(/(^['"]|['"]$)/g, '').trim();
+
+      obj[key] = value;
+    }
+  });
+
+  return obj;
 }
