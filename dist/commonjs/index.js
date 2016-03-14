@@ -2,6 +2,9 @@
 
 exports.__esModule = true;
 exports.load = load;
+
+var _parser = require('./parser');
+
 var defaultOptions = {
   path: './',
   file: 'aurelia.env'
@@ -17,7 +20,7 @@ function load(options) {
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
         (function () {
-          var parsedObject = parse(xhr.response);
+          var parsedObject = _parser.Parser.parse(xhr.response);
           Object.keys(parsedObject).forEach(function (key) {
             window.env[key] = parsedObject[key];
           });
@@ -41,25 +44,4 @@ function load(options) {
 
     xhr.send();
   });
-}
-
-function parse(content) {
-  var obj = {};
-
-  content.split('\n').forEach(function (line) {
-    var keyValueArr = line.match(/^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/);
-    if (keyValueArr !== null) {
-      var key = keyValueArr[1];
-      var value = keyValueArr[2] ? keyValueArr[2] : '';
-      var len = value ? value.length : 0;
-      if (len > 0 && value.charAt(0) === '\"' && value.charAt(len - 1) === '\"') {
-        value = value.replace(/\\n/gm, '\n');
-      }
-      value = value.replace(/(^['"]|['"]$)/g, '').trim();
-
-      obj[key] = value;
-    }
-  });
-
-  return obj;
 }
