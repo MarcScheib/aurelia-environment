@@ -1,7 +1,11 @@
-export function configure(aurelia) {
-  aurelia.use
-    .standardConfiguration()
-    .developmentLogging();
+import {load} from 'aurelia-environment';
 
-  aurelia.start().then(a => a.setRoot('src/app'));
+export function configure(aurelia) {
+  load().then(() => {
+    aurelia.use
+      .standardConfiguration()
+      .developmentLogging();
+
+    aurelia.start().then(a => a.setRoot('src/app'));
+  });
 }
