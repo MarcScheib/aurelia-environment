@@ -1,8 +1,15 @@
-import {parse} from '../../src/index';
+import {load} from '../../src/index';
 
-describe('testing load routine', () => {
-  it('should parse the string input configure function', () => {
-    let content = 'test';
-    expect(parse(content)).toEqual(content);
+describe('the environment load routine', () => {
+  beforeEach(() => {
+    spyOn(XMLHttpRequest.prototype, 'open').and.callThrough();
+    spyOn(XMLHttpRequest.prototype, 'send');
+  });
+
+  it('should request environment file', done => {
+    load();
+    expect(XMLHttpRequest.prototype.open).toHaveBeenCalled();
+    expect(XMLHttpRequest.prototype.send).toHaveBeenCalled();
+    done();
   });
 });
