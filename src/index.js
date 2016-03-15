@@ -18,7 +18,6 @@ export function load(options) {
         Object.keys(parsedObject).forEach(key => {
           window.env[key] = parsedObject[key];
         });
-
         resolve();
       } else {
         reject({
@@ -34,7 +33,6 @@ export function load(options) {
         statusText: xhr.statusText
       });
     };
-
     xhr.send();
   });
 }

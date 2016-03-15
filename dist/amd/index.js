@@ -23,7 +23,6 @@ define(['exports', './parser'], function (exports, _parser) {
             Object.keys(parsedObject).forEach(function (key) {
               window.env[key] = parsedObject[key];
             });
-
             resolve();
           })();
         } else {
@@ -40,7 +39,6 @@ define(['exports', './parser'], function (exports, _parser) {
           statusText: xhr.statusText
         });
       };
-
       xhr.send();
     });
   }

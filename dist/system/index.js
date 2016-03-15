@@ -19,7 +19,6 @@ System.register(['./parser'], function (_export) {
             Object.keys(parsedObject).forEach(function (key) {
               window.env[key] = parsedObject[key];
             });
-
             resolve();
           })();
         } else {
@@ -36,7 +35,6 @@ System.register(['./parser'], function (_export) {
           statusText: xhr.statusText
         });
       };
-
       xhr.send();
     });
   }

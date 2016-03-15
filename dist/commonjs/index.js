@@ -24,7 +24,6 @@ function load(options) {
           Object.keys(parsedObject).forEach(function (key) {
             window.env[key] = parsedObject[key];
           });
-
           resolve();
         })();
       } else {
@@ -41,7 +40,6 @@ function load(options) {
         statusText: xhr.statusText
       });
     };
-
     xhr.send();
   });
 }

@@ -6,16 +6,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Parser = (function () {
   Parser.parse = function parse(content) {
-    var parser = new Parser(content);
+    var parser = new Parser();
+    parser.doParse(content);
     return parser.getEnv();
   };
 
-  function Parser(content) {
+  function Parser() {
     _classCallCheck(this, Parser);
 
-    this.env = [];
-
-    this.doParse(content);
+    this.env = {};
+    this.lineNum = 0;
   }
 
   Parser.prototype.doParse = function doParse(content) {
@@ -23,6 +23,7 @@ var Parser = (function () {
     if (!lines) {
       return;
     }
+
     return this.parseContent(lines);
   };
 
@@ -31,8 +32,8 @@ var Parser = (function () {
   };
 
   Parser.prototype.parseContent = function parseContent(lines) {
-    this.lines = [];
-    this.line_num = 0;
+    this.env = {};
+    this.lineNum = 0;
     for (var _iterator = lines, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
       var _ref;
 
@@ -47,13 +48,40 @@ var Parser = (function () {
 
       var line = _ref;
 
-      this.line_num++;
-      if (line.startsWith('#')) {
+      this.lineNum++;
+      if (line.startsWith('#') || !line) {
         continue;
       }
+
+      this.parseLine(line);
     }
 
-    return this.lines;
+    return this.env;
+  };
+
+  Parser.prototype.parseLine = function parseLine(line) {
+    var pair = this.parseKeyValuePair(line);
+
+    this.env[pair.key] = pair.value;
+  };
+
+  Parser.prototype.parseKeyValuePair = function parseKeyValuePair(line) {
+    var pair = line.split('=', 2);
+
+    if (pair.length !== 2) {
+      throw new {
+        name: 'ParserException',
+        message: 'Could not parse key value pair from line "' + line + '"',
+        toString: function toString() {
+          return this.name + ': ' + this.message;
+        }
+      }();
+    }
+
+    return {
+      key: pair[0],
+      value: pair[1]
+    };
   };
 
   Parser.prototype.getEnv = function getEnv() {
