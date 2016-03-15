@@ -14,7 +14,7 @@ export class Parser {
   doParse(content) {
     let lines = this.getLines(content);
     if (!lines) {
-      return;
+      return {};
     }
 
     return this.parseContent(lines);

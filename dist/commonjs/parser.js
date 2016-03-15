@@ -21,7 +21,7 @@ var Parser = (function () {
   Parser.prototype.doParse = function doParse(content) {
     var lines = this.getLines(content);
     if (!lines) {
-      return;
+      return {};
     }
 
     return this.parseContent(lines);
