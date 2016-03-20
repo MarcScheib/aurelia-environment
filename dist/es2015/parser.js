@@ -1,3 +1,4 @@
+
 export let Parser = class Parser {
   static parse(content) {
     let parser = new Parser();

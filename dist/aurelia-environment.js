@@ -1,18 +1,40 @@
 
+/**
+ * An .env file content parser.
+ */
 export class Parser {
-  static parse(content) {
+  /**
+   * Parser function which can easily called to initialize the Parser and start
+   * parsing the given string. It directly returns the resulting environment.
+   *
+   * @param content - The content string that will be parsed.
+   */
+  static parse(content: string): any {
     let parser = new Parser();
     parser.doParse(content);
     return parser.getEnv();
   }
 
-  env = {};
-  lineNum = 0;
+  /**
+   * Environment object containing the parsed key-value-pairs of this Parser
+   * object.
+   */
+  env: any = {};
+
+  /**
+   * The number of lines parsed by this object.
+   */
+  lineNum: number = 0;
 
   constructor() {
   }
 
-  doParse(content) {
+  /**
+   * Parses the given content and returns the parsed environment object.
+   *
+   * @param content - content to parse
+   */
+  doParse(content: string): any {
     let lines = this.getLines(content);
     if (!lines) {
       return {};
@@ -21,11 +43,22 @@ export class Parser {
     return this.parseContent(lines);
   }
 
-  getLines(content) {
+  /**
+   * Splits the given string by line breaks and returns the array of lines.
+   *
+   * @param content - content to split by line endings
+   */
+  getLines(content: string): string[] {
     return content.split('\n');
   }
 
-  parseContent(lines) {
+/**
+ * Parses the given array of strings. If a line starts with a #, it will be
+ * treated as a comment. Otherwise, the line will handed over to line parsing.
+ *
+ * @param lines - array of lines
+ */
+parseContent(lines: string[]): any {
     this.env = {};
     this.lineNum = 0;
     for (let line of lines) {
@@ -40,20 +73,33 @@ export class Parser {
     return this.env;
   }
 
-  parseLine(line) {
+  /**
+   * Parses the given line and sets the resulting key-value pair as an
+   * environment object property.
+   *
+   * @param line - the line reflecting a key-value pair
+   */
+  parseLine(line: string): void {
     let pair = this.parseKeyValuePair(line);
 
     this.env[pair.key] = pair.value;
   }
 
-  parseKeyValuePair(line) {
+  /**
+   * Splits the given line by = and verifies that a key and a value exist.
+   * Returns the key-value pair as an object.
+   * 
+   * @param line - key-value pair as a string
+   * @throws ParserException
+   */
+  parseKeyValuePair(line: string): any {
     let pair = line.split('=', 2);
 
     if (pair.length !== 2) {
       throw new {
         name: 'ParserException',
         message: 'Could not parse key value pair from line "' + line + '"',
-        toString: function() {
+        toString: function () {
           return this.name + ': ' + this.message;
         }
       };
@@ -65,7 +111,10 @@ export class Parser {
     };
   }
 
-  getEnv() {
+  /**
+   * Returns the environment object.
+   */
+  getEnv(): any {
     return this.env;
   }
 }
