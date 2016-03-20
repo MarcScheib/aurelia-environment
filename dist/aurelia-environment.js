@@ -52,13 +52,13 @@ export class Parser {
     return content.split('\n');
   }
 
-/**
- * Parses the given array of strings. If a line starts with a #, it will be
- * treated as a comment. Otherwise, the line will handed over to line parsing.
- *
- * @param lines - array of lines
- */
-parseContent(lines: string[]): any {
+  /**
+   * Parses the given array of strings. If a line starts with a #, it will be
+   * treated as a comment. Otherwise, the line will handed over to line parsing.
+   *
+   * @param lines - array of lines
+   */
+  parseContent(lines: string[]): any {
     this.env = {};
     this.lineNum = 0;
     for (let line of lines) {
@@ -88,7 +88,7 @@ parseContent(lines: string[]): any {
   /**
    * Splits the given line by = and verifies that a key and a value exist.
    * Returns the key-value pair as an object.
-   * 
+   *
    * @param line - key-value pair as a string
    * @throws ParserException
    */
@@ -99,7 +99,7 @@ parseContent(lines: string[]): any {
       throw new {
         name: 'ParserException',
         message: 'Could not parse key value pair from line "' + line + '"',
-        toString: function () {
+        toString: function() {
           return this.name + ': ' + this.message;
         }
       };

@@ -40,11 +40,11 @@ declare module 'aurelia-environment' {
     getLines(content: string): string[];
     
     /**
-     * Parses the given array of strings. If a line starts with a #, it will be
-     * treated as a comment. Otherwise, the line will handed over to line parsing.
-     *
-     * @param lines - array of lines
-     */
+       * Parses the given array of strings. If a line starts with a #, it will be
+       * treated as a comment. Otherwise, the line will handed over to line parsing.
+       *
+       * @param lines - array of lines
+       */
     parseContent(lines: string[]): any;
     
     /**
@@ -58,7 +58,7 @@ declare module 'aurelia-environment' {
     /**
        * Splits the given line by = and verifies that a key and a value exist.
        * Returns the key-value pair as an object.
-       * 
+       *
        * @param line - key-value pair as a string
        * @throws ParserException
        */
