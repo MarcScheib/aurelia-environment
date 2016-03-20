@@ -23,6 +23,7 @@ console.log(window.env.ENV1); // outputs VALUE as well
 ### Assignment
 
 To assign values, the syntax is `key = value`. However, all of the assignments below are valid:
+
 ```bash
 TEST1 = value
 TEST2= VALUE
@@ -30,4 +31,13 @@ TEST3 =VALUE
 TEST4=VALUE
  TEST5 = VALUE
 TEST6  =   VALUE
+```
+
+### Comments
+
+Comments are added by prefixing a line with a #:
+
+```bash
+# This is a comment
+ENV1 = value
 ```
