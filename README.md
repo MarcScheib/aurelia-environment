@@ -11,6 +11,7 @@ A simple .env plugin developed for use with [Aurelia](http://www.aurelia.io/). H
 - [Installation](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Installation.md)
 - [Getting Started](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/GettingStarted.md)
 - [Configuration](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Configuration.md)
+- [Usage](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Usage.md)
 - [FAQ](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/FAQ.md)
 
 ## Dependencies
