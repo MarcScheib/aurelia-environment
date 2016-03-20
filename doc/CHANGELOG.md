@@ -1,3 +1,13 @@
+<a name="0.0.2"></a>
+## [0.0.2](https://github.com/MarcScheib/aurelia-environment/compare/0.0.1...v0.0.2) (2016-03-20)
+
+
+### Features
+
+* **ts:** add type defintions and docs ([92e96c8](https://github.com/MarcScheib/aurelia-environment/commit/92e96c8))
+
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2016-03-20)
 
