@@ -1,4 +1,4 @@
-import {Parser} from './parser';
+import { Parser } from './parser';
 
 let defaultOptions = {
   path: './',
@@ -12,7 +12,7 @@ export function load(options) {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', _options.path + _options.file);
-    xhr.onload = function() {
+    xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
         let parsedObject = Parser.parse(xhr.response);
         Object.keys(parsedObject).forEach(key => {
@@ -27,7 +27,7 @@ export function load(options) {
       }
     };
 
-    xhr.onerror = function() {
+    xhr.onerror = function () {
       reject({
         status: this.status,
         statusText: xhr.statusText

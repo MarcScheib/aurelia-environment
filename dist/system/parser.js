@@ -1,14 +1,18 @@
-System.register([], function (_export) {
-  'use strict';
+'use strict';
 
+System.register([], function (_export, _context) {
   var Parser;
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
 
   return {
     setters: [],
     execute: function () {
-      Parser = (function () {
+      _export('Parser', Parser = function () {
         Parser.parse = function parse(content) {
           var parser = new Parser();
           parser.doParse(content);
@@ -93,7 +97,7 @@ System.register([], function (_export) {
         };
 
         return Parser;
-      })();
+      }());
 
       _export('Parser', Parser);
     }

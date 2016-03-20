@@ -1,8 +1,11 @@
 define(['exports', './parser'], function (exports, _parser) {
   'use strict';
 
-  exports.__esModule = true;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
   exports.load = load;
+
 
   var defaultOptions = {
     path: './',

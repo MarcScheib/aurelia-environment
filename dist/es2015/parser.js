@@ -1,14 +1,13 @@
-export class Parser {
+export let Parser = class Parser {
   static parse(content) {
     let parser = new Parser();
     parser.doParse(content);
     return parser.getEnv();
   }
 
-  env = {};
-  lineNum = 0;
-
   constructor() {
+    this.env = {};
+    this.lineNum = 0;
   }
 
   doParse(content) {
@@ -52,10 +51,10 @@ export class Parser {
       throw new {
         name: 'ParserException',
         message: 'Could not parse key value pair from line "' + line + '"',
-        toString: function() {
+        toString: function () {
           return this.name + ': ' + this.message;
         }
-      };
+      }();
     }
 
     return {
@@ -67,4 +66,4 @@ export class Parser {
   getEnv() {
     return this.env;
   }
-}
+};

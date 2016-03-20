@@ -1,11 +1,17 @@
 define(['exports'], function (exports) {
   'use strict';
 
-  exports.__esModule = true;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
 
-  var Parser = (function () {
+  var Parser = exports.Parser = function () {
     Parser.parse = function parse(content) {
       var parser = new Parser();
       parser.doParse(content);
@@ -90,7 +96,5 @@ define(['exports'], function (exports) {
     };
 
     return Parser;
-  })();
-
-  exports.Parser = Parser;
+  }();
 });
