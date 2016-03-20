@@ -6,6 +6,12 @@
 
 A simple .env plugin developed for use with [Aurelia](http://www.aurelia.io/). However, it can be used for any other JavaScript framework.
 
+## Documentation
+
+- [Installation](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Installation.md)
+- [Getting Started](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/GettingStarted.md)
+- [Configuration](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Configuration.md)
+
 ## Dependencies
 
 This plugin has no external library dependencies.
