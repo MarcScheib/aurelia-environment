@@ -1,9 +1,20 @@
-import {Parser} from '../../src/parser';
+import {Parser} from "../../src/parser";
 
 describe('the parser', () => {
   var sut;
   beforeEach(() => {
     sut = new Parser();
+  });
+
+  it('should provide static access to parser', () => {
+    spyOn(Parser.prototype, 'doParse');
+    let env = Parser.parse(`ENV1=value3`);
+    expect(Parser.prototype.doParse).toHaveBeenCalled();
+  });
+
+  it('should return empty env on empty content', () => {
+    let env = sut.doParse('');
+    expect(env).toEqual({});
   });
 
   it('should return simple values', () => {
