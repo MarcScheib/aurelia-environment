@@ -17,5 +17,15 @@ describe('the parser', () => {
 
     expect(sut.getEnv()).toEqual(expected);
   });
+
+  it('should ignore comments', () => {
+    sut.doParse(`#ENV1=value3\n#ENV2=value2\nENV3=value1`);
+
+    let expected = {
+      ENV3: 'value1'
+    };
+
+    expect(sut.getEnv()).toEqual(expected);
+  });
 });
 
