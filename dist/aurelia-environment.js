@@ -89,16 +89,10 @@ export class Parser {
    * @throws ParserException
    */
   parseKeyValuePair(line: string): any {
-    let pair = line.split('=', 2);
+    let pair = line.split('=');
 
     if (pair.length !== 2) {
-      throw new {
-        name: 'ParserException',
-        message: 'Could not parse key value pair from line "' + line + '"',
-        toString: function() {
-          return this.name + ': ' + this.message;
-        }
-      };
+      throw new Error('Could not parse key value pair from line "' + line + '"');
     }
 
     let key = pair[0];

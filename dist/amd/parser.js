@@ -69,16 +69,10 @@ define(['exports'], function (exports) {
     };
 
     Parser.prototype.parseKeyValuePair = function parseKeyValuePair(line) {
-      var pair = line.split('=', 2);
+      var pair = line.split('=');
 
       if (pair.length !== 2) {
-        throw new {
-          name: 'ParserException',
-          message: 'Could not parse key value pair from line "' + line + '"',
-          toString: function toString() {
-            return this.name + ': ' + this.message;
-          }
-        }();
+        throw new Error('Could not parse key value pair from line "' + line + '"');
       }
 
       var key = pair[0];
