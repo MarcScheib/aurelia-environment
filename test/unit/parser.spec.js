@@ -20,8 +20,9 @@ describe('the parser', () => {
   it('should throw an exception on wrong assignment syntax', () => {
     try {
       sut.doParse(`ENV1=value3=value2`);
+      expect(true).not.toBe(true);
     } catch(err) {
-      expect(err.name).toEqual('ParserException');
+      expect(err.message).toEqual('Could not parse key value pair from line "ENV1=value3=value2"');
     }
   });
 
