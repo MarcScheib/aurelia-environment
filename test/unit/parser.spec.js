@@ -17,6 +17,14 @@ describe('the parser', () => {
     expect(env).toEqual({});
   });
 
+  it('should throw an exception on wrong assignment syntax', () => {
+    try {
+      sut.doParse(`ENV1=value3=value2`);
+    } catch(err) {
+      expect(err.name).toEqual('ParserException');
+    }
+  });
+
   it('should return simple values', () => {
     sut.doParse(`ENV1=value3\nENV2=value2\nENV3=value1`);
 
