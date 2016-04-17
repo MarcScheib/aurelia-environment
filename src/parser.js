@@ -35,10 +35,6 @@ export class Parser {
    */
   doParse(content: string): any {
     let lines = this.getLines(content);
-    if (!lines) {
-      return {};
-    }
-
     return this.parseContent(lines);
   }
 
