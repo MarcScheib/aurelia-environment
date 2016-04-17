@@ -22,10 +22,6 @@ var Parser = exports.Parser = function () {
 
   Parser.prototype.doParse = function doParse(content) {
     var lines = this.getLines(content);
-    if (!lines) {
-      return {};
-    }
-
     return this.parseContent(lines);
   };
 
@@ -80,10 +76,18 @@ var Parser = exports.Parser = function () {
       }();
     }
 
+    var key = pair[0];
+    var value = this.stripComments(pair[1]);
+
     return {
-      key: pair[0],
-      value: pair[1]
+      key: key,
+      value: value
     };
+  };
+
+  Parser.prototype.stripComments = function stripComments(value) {
+    var values = value.split('#');
+    return values[0].trim();
   };
 
   Parser.prototype.getEnv = function getEnv() {

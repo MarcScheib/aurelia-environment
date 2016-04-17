@@ -28,10 +28,6 @@ System.register([], function (_export, _context) {
 
         Parser.prototype.doParse = function doParse(content) {
           var lines = this.getLines(content);
-          if (!lines) {
-            return {};
-          }
-
           return this.parseContent(lines);
         };
 
@@ -86,10 +82,18 @@ System.register([], function (_export, _context) {
             }();
           }
 
+          var key = pair[0];
+          var value = this.stripComments(pair[1]);
+
           return {
-            key: pair[0],
-            value: pair[1]
+            key: key,
+            value: value
           };
+        };
+
+        Parser.prototype.stripComments = function stripComments(value) {
+          var values = value.split('#');
+          return values[0].trim();
         };
 
         Parser.prototype.getEnv = function getEnv() {

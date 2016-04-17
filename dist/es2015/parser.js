@@ -13,10 +13,6 @@ export let Parser = class Parser {
 
   doParse(content) {
     let lines = this.getLines(content);
-    if (!lines) {
-      return {};
-    }
-
     return this.parseContent(lines);
   }
 
@@ -58,10 +54,18 @@ export let Parser = class Parser {
       }();
     }
 
+    let key = pair[0];
+    let value = this.stripComments(pair[1]);
+
     return {
-      key: pair[0],
-      value: pair[1]
+      key: key,
+      value: value
     };
+  }
+
+  stripComments(value) {
+    let values = value.split('#');
+    return values[0].trim();
   }
 
   getEnv() {

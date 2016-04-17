@@ -36,10 +36,6 @@ export class Parser {
    */
   doParse(content: string): any {
     let lines = this.getLines(content);
-    if (!lines) {
-      return {};
-    }
-
     return this.parseContent(lines);
   }
 
@@ -105,10 +101,23 @@ export class Parser {
       };
     }
 
+    let key = pair[0];
+    let value = this.stripComments(pair[1]);
+
     return {
-      key: pair[0],
-      value: pair[1]
+      key: key,
+      value: value
     };
+  }
+
+  /**
+   * Strips comments from a value.
+   *
+   * @param value - the value to strip comments from
+   */
+  stripComments(value: string): string {
+    let values = value.split('#');
+    return values[0].trim();
   }
 
   /**

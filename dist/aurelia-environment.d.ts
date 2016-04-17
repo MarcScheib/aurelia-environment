@@ -65,6 +65,13 @@ declare module 'aurelia-environment' {
     parseKeyValuePair(line: string): any;
     
     /**
+       * Strips comments from a value.
+       *
+       * @param value - the value to strip comments from
+       */
+    stripComments(value: string): string;
+    
+    /**
        * Returns the environment object.
        */
     getEnv(): any;
