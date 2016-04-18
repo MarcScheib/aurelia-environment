@@ -7,7 +7,7 @@ let defaultOptions = {
 
 export function load(options) {
   window.env = {};
-  let _options = Object.assign({}, options, defaultOptions);
+  let _options = Object.assign({}, defaultOptions, options);
 
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
