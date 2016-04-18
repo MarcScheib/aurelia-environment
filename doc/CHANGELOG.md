@@ -1,3 +1,13 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/MarcScheib/aurelia-environment/compare/0.1.1...v0.1.2) (2016-04-18)
+
+
+### Bug Fixes
+
+* **options:** switch default options with custom ([bf50d57](https://github.com/MarcScheib/aurelia-environment/commit/bf50d57))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/MarcScheib/aurelia-environment/compare/0.1.0...v0.1.1) (2016-04-17)
 

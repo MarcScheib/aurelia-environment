@@ -14,7 +14,7 @@ define(['exports', './parser'], function (exports, _parser) {
 
   function load(options) {
     window.env = {};
-    var _options = Object.assign({}, options, defaultOptions);
+    var _options = Object.assign({}, defaultOptions, options);
 
     return new Promise(function (resolve, reject) {
       var xhr = new XMLHttpRequest();
