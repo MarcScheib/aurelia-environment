@@ -18,7 +18,7 @@ describe('the environment load routine', () => {
   });
 
   it('should reject on missing environment file', done => {
-    let response = new Response(null, { status: 500 });
+    let response = new Response(null, { status: 500, statusText: 'not found' });
     fetch.and.returnValue(Promise.resolve(response));
 
     load({file: 'notExisting.env'})
