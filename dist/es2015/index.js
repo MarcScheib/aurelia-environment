@@ -5,34 +5,34 @@ let defaultOptions = {
   file: 'aurelia.env'
 };
 
+let _options = Object.create(null);
+
 export function load(options) {
-  window.env = {};
-  let _options = Object.assign({}, defaultOptions, options);
+  if (typeof fetch === 'undefined') {
+    throw new Error('aurelia-environment plugin requires a Fetch API implementation.');
+  }
+
+  window.env = Object.create(null);
+  _options = Object.assign(Object.create(null), defaultOptions, options);
 
   return new Promise((resolve, reject) => {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', _options.path + _options.file);
-    xhr.onload = function () {
-      if (this.status >= 200 && this.status < 300) {
-        let parsedObject = Parser.parse(xhr.response);
-        Object.keys(parsedObject).forEach(key => {
-          window.env[key] = parsedObject[key];
-        });
-        resolve();
-      } else {
-        reject({
-          status: this.status,
-          statusText: xhr.statusText
-        });
+    fetch(new Request(_options.path + _options.file)).then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        return response.text();
       }
-    };
 
-    xhr.onerror = function () {
-      reject({
-        status: this.status,
-        statusText: xhr.statusText
+      return Promise.reject({
+        status: response.status,
+        statusText: response.statusText
       });
-    };
-    xhr.send();
+    }).then(text => {
+      let parsedObject = Parser.parse(text);
+      Object.keys(parsedObject).forEach(key => {
+        window.env[key] = parsedObject[key];
+      });
+      resolve();
+    }).catch(error => {
+      reject(error);
+    });
   });
 }

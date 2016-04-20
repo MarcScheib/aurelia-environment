@@ -1,7 +1,8 @@
 'use strict';
 
 System.register(['./parser'], function (_export, _context) {
-  var Parser, defaultOptions;
+  var Parser, defaultOptions, _options;
+
   return {
     setters: [function (_parser) {
       Parser = _parser.Parser;
@@ -11,37 +12,34 @@ System.register(['./parser'], function (_export, _context) {
         path: './',
         file: 'aurelia.env'
       };
+      _options = Object.create(null);
       function load(options) {
-        window.env = {};
-        var _options = Object.assign({}, defaultOptions, options);
+        if (typeof fetch === 'undefined') {
+          throw new Error('aurelia-environment plugin requires a Fetch API implementation.');
+        }
+
+        window.env = Object.create(null);
+        _options = Object.assign(Object.create(null), defaultOptions, options);
 
         return new Promise(function (resolve, reject) {
-          var xhr = new XMLHttpRequest();
-          xhr.open('GET', _options.path + _options.file);
-          xhr.onload = function () {
-            if (this.status >= 200 && this.status < 300) {
-              (function () {
-                var parsedObject = Parser.parse(xhr.response);
-                Object.keys(parsedObject).forEach(function (key) {
-                  window.env[key] = parsedObject[key];
-                });
-                resolve();
-              })();
-            } else {
-              reject({
-                status: this.status,
-                statusText: xhr.statusText
-              });
+          fetch(new Request(_options.path + _options.file)).then(function (response) {
+            if (response.status >= 200 && response.status < 300) {
+              return response.text();
             }
-          };
 
-          xhr.onerror = function () {
-            reject({
-              status: this.status,
-              statusText: xhr.statusText
+            return Promise.reject({
+              status: response.status,
+              statusText: response.statusText
             });
-          };
-          xhr.send();
+          }).then(function (text) {
+            var parsedObject = Parser.parse(text);
+            Object.keys(parsedObject).forEach(function (key) {
+              window.env[key] = parsedObject[key];
+            });
+            resolve();
+          }).catch(function (error) {
+            reject(error);
+          });
         });
       }
 
