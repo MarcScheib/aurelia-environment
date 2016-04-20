@@ -81,6 +81,7 @@
     "run-sequence": "^1.1.5",
     "through2": "^2.0.1",
     "vinyl-paths": "^2.1.0",
+    "whatwg-fetch": "^0.10.1",
     "yargs": "^4.3.2"
   },
   "aurelia": {
