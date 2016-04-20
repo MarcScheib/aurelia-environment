@@ -26,11 +26,9 @@ describe('the environment load routine', () => {
         expect(true).not.toBe(true);
       })
       .catch(error => {
+        expect(fetch).toHaveBeenCalled();
         expect(error.status).toBeDefined();
         expect(error.statusText).toBeDefined();
-      })
-      .then(() => {
-        expect(fetch).toHaveBeenCalled();
         done();
       });
   });
