@@ -23,3 +23,21 @@ jspm install aurelia-environment=github:MarcScheib/aurelia-environment@master
 ```
 
 This will add the current _master_ branch instead of the latest tagged version.
+
+
+## Bring Your Own Polyfill
+
+This plugin relies on the Fetch API, which is not yet supported by all popular browsers. However, this library does not include a polyfill for Fetch. If you need to support [browsers that haven't implemented Fetch](http://caniuse.com/#feat=fetch), you will need to install a polyfill like [GitHub's Fetch polyfill](https://github.com/github/fetch).
+
+You can install the polyfill via:
+
+```
+jspm install fetch
+```
+
+Then, make sure to load the polyfill before using **aurelia-environment**:
+
+```js
+import 'fetch';
+import {load} from 'aurelia-environment';
+```
