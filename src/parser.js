@@ -109,7 +109,7 @@ export class Parser {
    * @param value - the value to strip comments from
    */
   stripComments(value: string): string {
-    let values = value.split('#');
+    let values = value.split(' #');
     return values[0].trim();
   }
 

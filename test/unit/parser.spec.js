@@ -52,7 +52,7 @@ describe('the parser', () => {
     sut.doParse(`ENV1=value3#test\nENV2=value2 # test\nENV3=value1  #test`);
 
     let expected = {
-      ENV1: 'value3',
+      ENV1: 'value3#test',
       ENV2: 'value2',
       ENV3: 'value1'
     };
