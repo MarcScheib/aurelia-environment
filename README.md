@@ -7,6 +7,8 @@
 
 A simple .env plugin developed for use with [Aurelia](http://www.aurelia.io/). However, it can be used for any other JavaScript framework.
 
+The plugin allows to specify key-value-pairs in an environment file and replace all hard-coded configuration by environment variables. The file can then be easily exchanged depending on deployment point.
+
 ## Documentation
 
 - [Installation](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Installation.md)
