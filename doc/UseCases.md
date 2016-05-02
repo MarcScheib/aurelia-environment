@@ -8,7 +8,43 @@ The following sections list some example use cases on where to use the plugin
 
 ## Use Case #1: API Endpoints
 
-TBD
+API Endpoints during development phase often differ from production endpoints. Normally, before deploying your app, you have to go through the code, and adjust the endpoint.
+Most of the time, there is only one place where to change it. However, you have to touch your code which makes it hard to e.g. use your nightly builds.
+
+With the **aurelia-environment** plugin, you can specify your endpoint in an .env file which is decoupled from your code end exchangeable easily. See the following example.
+
+Your main app configuration may look like this:
+
+```javascript
+import {load} from 'aurelia-environment';
+
+export function configure(aurelia) {
+  load().then(() => {
+    aurelia.use
+      ...
+      .plugin('aurelia-api', config => {
+        config
+          .registerEndpoint('api', env.API_ENDPOINT)
+          .setDefaultEndpoint('api');
+      });
+
+    aurelia.start()
+      .then(a => a.setRoot('app', document.body))
+      .catch(() => {
+
+      });
+  })
+  .catch(error => {
+    console.error('Cannot load environment: ' + error.status + ' ' + error.statusText);
+  });
+}
+```
+
+As you can see, we only specify an environment file variable. No explicit endpoint. The endpoint itself is available in the .env file:
+
+```
+API_ENDPOINT=http://localhost:443/api/
+```
 
 ## Use Case #2: Application Logging
 
