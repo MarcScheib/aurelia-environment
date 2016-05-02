@@ -85,7 +85,7 @@ define(['exports'], function (exports) {
     };
 
     Parser.prototype.stripComments = function stripComments(value) {
-      var values = value.split('#');
+      var values = value.split(' #');
       return values[0].trim();
     };
 

@@ -58,7 +58,7 @@ export let Parser = class Parser {
   }
 
   stripComments(value) {
-    let values = value.split('#');
+    let values = value.split(' #');
     return values[0].trim();
   }
 

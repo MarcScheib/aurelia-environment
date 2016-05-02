@@ -86,7 +86,7 @@ System.register([], function (_export, _context) {
         };
 
         Parser.prototype.stripComments = function stripComments(value) {
-          var values = value.split('#');
+          var values = value.split(' #');
           return values[0].trim();
         };
 
