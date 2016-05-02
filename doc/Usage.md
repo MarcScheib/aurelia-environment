@@ -42,8 +42,9 @@ Comments are added by prefixing a line with a #:
 ENV1 = value
 ```
 
-It is also possible to use inline comments:
+It is also possible to use inline comments by adding a space and the # to a line:
 
 ```bash
 ENV1 = value # This is an inline comment
+ENV1 = value# This is no inline comment
 ```
