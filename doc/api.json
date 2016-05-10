@@ -1,26 +1,437 @@
 {
   "id": 2,
-  "name": "\"core-js\"",
+  "name": "\"aurelia-environment\"",
   "kind": 2,
   "kindString": "Module",
   "flags": {},
   "children": [
     {
       "id": 3,
-      "name": "coreJs",
-      "kind": 32,
-      "kindString": "Variable",
-      "flags": {},
-      "type": {
-        "type": "instrinct",
-        "name": "any"
-      }
+      "name": "Parser",
+      "kind": 128,
+      "kindString": "Class",
+      "flags": {
+        "isExported": true
+      },
+      "comment": {
+        "shortText": "An .env file content parser."
+      },
+      "children": [
+        {
+          "id": 9,
+          "name": "constructor",
+          "kind": 512,
+          "kindString": "Constructor",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 10,
+              "name": "new Parser",
+              "kind": 16384,
+              "kindString": "Constructor signature",
+              "flags": {},
+              "type": {
+                "type": "reference",
+                "name": "Parser",
+                "id": 3,
+                "moduleName": "\"aurelia-environment\""
+              }
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "env",
+          "kind": 1024,
+          "kindString": "Property",
+          "flags": {
+            "isExported": true
+          },
+          "comment": {
+            "shortText": "Environment object containing the parsed key-value-pairs of this Parser\nobject."
+          },
+          "type": {
+            "type": "instrinct",
+            "name": "any"
+          }
+        },
+        {
+          "id": 8,
+          "name": "lineNum",
+          "kind": 1024,
+          "kindString": "Property",
+          "flags": {
+            "isExported": true
+          },
+          "comment": {
+            "shortText": "The number of lines parsed by this object."
+          },
+          "type": {
+            "type": "instrinct",
+            "name": "number"
+          }
+        },
+        {
+          "id": 11,
+          "name": "doParse",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 12,
+              "name": "doParse",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Parses the given content and returns the parsed environment object."
+              },
+              "parameters": [
+                {
+                  "id": 13,
+                  "name": "content",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "content to parse\n"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "any"
+              }
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "name": "getEnv",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 30,
+              "name": "getEnv",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Returns the environment object."
+              },
+              "type": {
+                "type": "instrinct",
+                "name": "any"
+              }
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "name": "getLines",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 15,
+              "name": "getLines",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Splits the given string by line breaks and returns the array of lines."
+              },
+              "parameters": [
+                {
+                  "id": 16,
+                  "name": "content",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "content to split by line endings\n"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "isArray": true,
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "parseContent",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 18,
+              "name": "parseContent",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Parses the given array of strings. If a line starts with a #, it will be\ntreated as a comment. Otherwise, the line will handed over to line parsing."
+              },
+              "parameters": [
+                {
+                  "id": 19,
+                  "name": "lines",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "array of lines\n"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "isArray": true,
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "any"
+              }
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "parseKeyValuePair",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 24,
+              "name": "parseKeyValuePair",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Splits the given line by = and verifies that a key and a value exist.\nReturns the key-value pair as an object.",
+                "tags": [
+                  {
+                    "tag": "throws",
+                    "text": "ParserException\n"
+                  }
+                ]
+              },
+              "parameters": [
+                {
+                  "id": 25,
+                  "name": "line",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "key-value pair as a string"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "any"
+              }
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "parseLine",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 21,
+              "name": "parseLine",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Parses the given line and sets the resulting key-value pair as an\nenvironment object property."
+              },
+              "parameters": [
+                {
+                  "id": 22,
+                  "name": "line",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "the line reflecting a key-value pair\n"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "void"
+              }
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "name": "stripComments",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 27,
+              "name": "stripComments",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Strips comments from a value."
+              },
+              "parameters": [
+                {
+                  "id": 28,
+                  "name": "value",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "the value to strip comments from\n"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "parse",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isStatic": true,
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 5,
+              "name": "parse",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "comment": {
+                "shortText": "Parser function which can easily called to initialize the Parser and start\nparsing the given string. It directly returns the resulting environment."
+              },
+              "parameters": [
+                {
+                  "id": 6,
+                  "name": "content",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "comment": {
+                    "text": "The content string that will be parsed.\n"
+                  },
+                  "type": {
+                    "type": "instrinct",
+                    "name": "string"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "any"
+              }
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "Constructors",
+          "kind": 512,
+          "children": [
+            9
+          ]
+        },
+        {
+          "title": "Properties",
+          "kind": 1024,
+          "children": [
+            7,
+            8
+          ]
+        },
+        {
+          "title": "Methods",
+          "kind": 2048,
+          "children": [
+            11,
+            29,
+            14,
+            17,
+            23,
+            20,
+            26,
+            4
+          ]
+        }
+      ]
     }
   ],
   "groups": [
     {
-      "title": "Variables",
-      "kind": 32,
+      "title": "Classes",
+      "kind": 128,
       "children": [
         3
       ]
