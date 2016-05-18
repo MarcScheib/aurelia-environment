@@ -1,440 +1,2551 @@
 {
-  "id": 2,
-  "name": "\"aurelia-environment\"",
-  "kind": 2,
-  "kindString": "Module",
-  "flags": {},
-  "children": [
-    {
-      "id": 3,
-      "name": "Parser",
-      "kind": 128,
-      "kindString": "Class",
-      "flags": {
-        "isExported": true
-      },
-      "comment": {
-        "shortText": "An .env file content parser."
-      },
-      "children": [
-        {
-          "id": 9,
-          "name": "constructor",
-          "kind": 512,
-          "kindString": "Constructor",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 10,
-              "name": "new Parser",
-              "kind": 16384,
-              "kindString": "Constructor signature",
-              "flags": {},
-              "type": {
-                "type": "reference",
-                "name": "Parser",
-                "id": 3,
-                "moduleName": "\"aurelia-environment\""
-              }
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "name": "env",
-          "kind": 1024,
-          "kindString": "Property",
-          "flags": {
-            "isExported": true
-          },
-          "comment": {
-            "shortText": "Environment object containing the parsed key-value-pairs of this Parser\nobject."
-          },
-          "type": {
-            "type": "instrinct",
-            "name": "any"
-          }
-        },
-        {
-          "id": 8,
-          "name": "lineNum",
-          "kind": 1024,
-          "kindString": "Property",
-          "flags": {
-            "isExported": true
-          },
-          "comment": {
-            "shortText": "The number of lines parsed by this object."
-          },
-          "type": {
-            "type": "instrinct",
-            "name": "number"
-          }
-        },
-        {
-          "id": 11,
-          "name": "doParse",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 12,
-              "name": "doParse",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Parses the given content and returns the parsed environment object."
-              },
-              "parameters": [
-                {
-                  "id": 13,
-                  "name": "content",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "content to parse\n"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ]
-        },
-        {
-          "id": 29,
-          "name": "getEnv",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 30,
-              "name": "getEnv",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Returns the environment object."
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ]
-        },
-        {
-          "id": 14,
-          "name": "getLines",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 15,
-              "name": "getLines",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Splits the given string by line breaks and returns the array of lines."
-              },
-              "parameters": [
-                {
-                  "id": 16,
-                  "name": "content",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "content to split by line endings\n"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "isArray": true,
-                "name": "string"
-              }
-            }
-          ]
-        },
-        {
-          "id": 17,
-          "name": "parseContent",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 18,
-              "name": "parseContent",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Parses the given array of strings. If a line starts with a #, it will be\ntreated as a comment. Otherwise, the line will handed over to line parsing."
-              },
-              "parameters": [
-                {
-                  "id": 19,
-                  "name": "lines",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "array of lines\n"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "isArray": true,
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ]
-        },
-        {
-          "id": 23,
-          "name": "parseKeyValuePair",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 24,
-              "name": "parseKeyValuePair",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Splits the given line by = and verifies that a key and a value exist.\nReturns the key-value pair as an object.",
-                "tags": [
-                  {
-                    "tag": "throws",
-                    "text": "ParserException\n"
-                  }
-                ]
-              },
-              "parameters": [
-                {
-                  "id": 25,
-                  "name": "line",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "key-value pair as a string"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ]
-        },
-        {
-          "id": 20,
-          "name": "parseLine",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 21,
-              "name": "parseLine",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Parses the given line and sets the resulting key-value pair as an\nenvironment object property."
-              },
-              "parameters": [
-                {
-                  "id": 22,
-                  "name": "line",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "the line reflecting a key-value pair\n"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "void"
-              }
-            }
-          ]
-        },
-        {
-          "id": 26,
-          "name": "stripComments",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 27,
-              "name": "stripComments",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Strips comments from a value."
-              },
-              "parameters": [
-                {
-                  "id": 28,
-                  "name": "value",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "the value to strip comments from\n"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "string"
-              }
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "name": "parse",
-          "kind": 2048,
-          "kindString": "Method",
-          "flags": {
-            "isStatic": true,
-            "isExported": true
-          },
-          "signatures": [
-            {
-              "id": 5,
-              "name": "parse",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Parser function which can easily called to initialize the Parser and start\nparsing the given string. It directly returns the resulting environment."
-              },
-              "parameters": [
-                {
-                  "id": 6,
-                  "name": "content",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "The content string that will be parsed.\n"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ]
-        }
-      ],
-      "groups": [
-        {
-          "title": "Constructors",
-          "kind": 512,
-          "children": [
-            9
-          ]
-        },
-        {
-          "title": "Properties",
-          "kind": 1024,
-          "children": [
-            7,
-            8
-          ]
-        },
-        {
-          "title": "Methods",
-          "kind": 2048,
-          "children": [
-            11,
-            29,
-            14,
-            17,
-            23,
-            20,
-            26,
-            4
-          ]
-        }
-      ]
-    }
-  ],
-  "groups": [
-    {
-      "title": "Classes",
-      "kind": 128,
-      "children": [
-        3
-      ]
-    }
-  ]
+	"id": 0,
+	"name": "aurelia-environment-docs",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"dist/amd/aurelia-environment.d\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "c:/Users/marc/Projects/aurelia-environment/dist/amd/aurelia-environment.d.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "\"aurelia-environment\"",
+					"kind": 2,
+					"kindString": "Module",
+					"flags": {},
+					"children": [
+						{
+							"id": 3,
+							"name": "Parser",
+							"kind": 128,
+							"kindString": "Class",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "An .env file content parser."
+							},
+							"children": [
+								{
+									"id": 9,
+									"name": "constructor",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 10,
+											"name": "new Parser",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Parser",
+												"id": 3
+											}
+										}
+									]
+								},
+								{
+									"id": 7,
+									"name": "env",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Environment object containing the parsed key-value-pairs of this Parser\nobject."
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "any"
+									}
+								},
+								{
+									"id": 8,
+									"name": "lineNum",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The number of lines parsed by this object."
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 11,
+									"name": "doParse",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 12,
+											"name": "doParse",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Parses the given content and returns the parsed environment object."
+											},
+											"parameters": [
+												{
+													"id": 13,
+													"name": "content",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "content to parse\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										}
+									]
+								},
+								{
+									"id": 29,
+									"name": "getEnv",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 30,
+											"name": "getEnv",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Returns the environment object."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										}
+									]
+								},
+								{
+									"id": 14,
+									"name": "getLines",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 15,
+											"name": "getLines",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Splits the given string by line breaks and returns the array of lines."
+											},
+											"parameters": [
+												{
+													"id": 16,
+													"name": "content",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "content to split by line endings\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"isArray": true,
+												"name": "string"
+											}
+										}
+									]
+								},
+								{
+									"id": 17,
+									"name": "parseContent",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 18,
+											"name": "parseContent",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Parses the given array of strings. If a line starts with a #, it will be\ntreated as a comment. Otherwise, the line will handed over to line parsing."
+											},
+											"parameters": [
+												{
+													"id": 19,
+													"name": "lines",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "array of lines\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"isArray": true,
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										}
+									]
+								},
+								{
+									"id": 23,
+									"name": "parseKeyValuePair",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 24,
+											"name": "parseKeyValuePair",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Splits the given line by = and verifies that a key and a value exist.\nReturns the key-value pair as an object.",
+												"tags": [
+													{
+														"tag": "throws",
+														"text": "ParserException\n"
+													}
+												]
+											},
+											"parameters": [
+												{
+													"id": 25,
+													"name": "line",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "key-value pair as a string"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										}
+									]
+								},
+								{
+									"id": 20,
+									"name": "parseLine",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 21,
+											"name": "parseLine",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Parses the given line and sets the resulting key-value pair as an\nenvironment object property."
+											},
+											"parameters": [
+												{
+													"id": 22,
+													"name": "line",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "the line reflecting a key-value pair\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 26,
+									"name": "stripComments",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 27,
+											"name": "stripComments",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Strips comments from a value."
+											},
+											"parameters": [
+												{
+													"id": 28,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "the value to strip comments from\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										}
+									]
+								},
+								{
+									"id": 4,
+									"name": "parse",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true,
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 5,
+											"name": "parse",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Parser function which can easily called to initialize the Parser and start\nparsing the given string. It directly returns the resulting environment."
+											},
+											"parameters": [
+												{
+													"id": 6,
+													"name": "content",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The content string that will be parsed.\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Constructors",
+									"kind": 512,
+									"children": [
+										9
+									]
+								},
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										7,
+										8
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										11,
+										29,
+										14,
+										17,
+										23,
+										20,
+										26,
+										4
+									]
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Classes",
+							"kind": 128,
+							"children": [
+								3
+							]
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Modules",
+					"kind": 2,
+					"children": [
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": 31,
+			"name": "\"doc/core-js.d\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "c:/Users/marc/Projects/aurelia-environment/doc/core-js.d.ts",
+			"children": [
+				{
+					"id": 32,
+					"name": "\"core-js\"",
+					"kind": 2,
+					"kindString": "Module",
+					"flags": {},
+					"children": [
+						{
+							"id": 33,
+							"name": "coreJs",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								33
+							]
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Modules",
+					"kind": 2,
+					"children": [
+						32
+					]
+				}
+			]
+		},
+		{
+			"id": 34,
+			"name": "\"jspm_packages/npm/aurelia-pal-browser@1.0.0-beta.1.2.1/aurelia-pal-browser.d\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "c:/Users/marc/Projects/aurelia-environment/jspm_packages/npm/aurelia-pal-browser@1.0.0-beta.1.2.1/aurelia-pal-browser.d.ts",
+			"children": [
+				{
+					"id": 35,
+					"name": "\"aurelia-pal-browser\"",
+					"kind": 2,
+					"kindString": "Module",
+					"flags": {},
+					"children": [
+						{
+							"id": 36,
+							"name": "initialize",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 37,
+									"name": "initialize",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Initializes the PAL with the Browser-targeted implementation."
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "void"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Functions",
+							"kind": 64,
+							"children": [
+								36
+							]
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Modules",
+					"kind": 2,
+					"children": [
+						35
+					]
+				}
+			]
+		},
+		{
+			"id": 38,
+			"name": "\"jspm_packages/npm/aurelia-pal@1.0.0-beta.1.2.2/aurelia-pal.d\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "c:/Users/marc/Projects/aurelia-environment/jspm_packages/npm/aurelia-pal@1.0.0-beta.1.2.2/aurelia-pal.d.ts",
+			"children": [
+				{
+					"id": 39,
+					"name": "\"aurelia-pal\"",
+					"kind": 2,
+					"kindString": "Module",
+					"flags": {},
+					"children": [
+						{
+							"id": 78,
+							"name": "Dom",
+							"kind": 256,
+							"kindString": "Interface",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Represents the core APIs of the DOM."
+							},
+							"children": [
+								{
+									"id": 79,
+									"name": "Element",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The global DOM Element type."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								},
+								{
+									"id": 80,
+									"name": "SVGElement",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The global DOM SVGElement type."
+									},
+									"type": {
+										"type": "reference",
+										"name": "SVGElement"
+									}
+								},
+								{
+									"id": 83,
+									"name": "activeElement",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The document's active/focused element."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								},
+								{
+									"id": 81,
+									"name": "boundary",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "A key representing a DOM boundary."
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 82,
+									"name": "title",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The document title."
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 84,
+									"name": "addEventListener",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 85,
+											"name": "addEventListener",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Add an event listener to the document."
+											},
+											"parameters": [
+												{
+													"id": 86,
+													"name": "eventName",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string representing the event type to listen for."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 87,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The function that receives a notification when an event of the specified type occurs."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function"
+													}
+												},
+												{
+													"id": 88,
+													"name": "capture",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "If true, useCapture indicates that the user wishes to initiate capture.\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "boolean"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 94,
+									"name": "adoptNode",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 95,
+											"name": "adoptNode",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Adopts a node from an external document.",
+												"returns": "The adopted node able to be used in the document.\n"
+											},
+											"parameters": [
+												{
+													"id": 96,
+													"name": "node",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The node to be adopted."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Node"
+											}
+										}
+									]
+								},
+								{
+									"id": 133,
+									"name": "appendNode",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 134,
+											"name": "appendNode",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Appends a node to the parent, if provided, or the document.body otherwise."
+											},
+											"parameters": [
+												{
+													"id": 135,
+													"name": "newNode",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The node to append."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												},
+												{
+													"id": 136,
+													"name": "parentNode",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "The node to append to, otherwise the document.body.\n"
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 103,
+									"name": "createComment",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 104,
+											"name": "createComment",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates a new Comment node.",
+												"returns": "A Comment node.\n"
+											},
+											"parameters": [
+												{
+													"id": 105,
+													"name": "text",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string to populate the new Comment node."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Comment"
+											}
+										}
+									]
+								},
+								{
+									"id": 111,
+									"name": "createCustomEvent",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 112,
+											"name": "createCustomEvent",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates a new CustomEvent.",
+												"returns": "A CustomEvent.\n"
+											},
+											"parameters": [
+												{
+													"id": 113,
+													"name": "eventType",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string representing the event type."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 114,
+													"name": "options",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "An options object specifying bubbles:boolean, cancelable:boolean and/or detail:Object information."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Object"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "CustomEvent"
+											}
+										}
+									]
+								},
+								{
+									"id": 106,
+									"name": "createDocumentFragment",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 107,
+											"name": "createDocumentFragment",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates a new DocumentFragment.",
+												"returns": "A DocumentFragment.\n"
+											},
+											"type": {
+												"type": "reference",
+												"name": "DocumentFragment"
+											}
+										}
+									]
+								},
+								{
+									"id": 97,
+									"name": "createElement",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 98,
+											"name": "createElement",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates the specified HTML element or an HTMLUnknownElement if the given element name isn't a known one.",
+												"returns": "The created element.\n"
+											},
+											"parameters": [
+												{
+													"id": 99,
+													"name": "tagName",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string that specifies the type of element to be created."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Element"
+											}
+										}
+									]
+								},
+								{
+									"id": 108,
+									"name": "createMutationObserver",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 109,
+											"name": "createMutationObserver",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates a new MutationObserver.",
+												"returns": "A MutationObservere.\n"
+											},
+											"parameters": [
+												{
+													"id": 110,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A callback that will recieve the change records with the mutations."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "MutationObserver"
+											}
+										}
+									]
+								},
+								{
+									"id": 130,
+									"name": "createTemplateFromMarkup",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 131,
+											"name": "createTemplateFromMarkup",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates an HTMLTemplateElement using the markup provided.",
+												"returns": "The instance of HTMLTemplateElement that was created from the provided markup.\n"
+											},
+											"parameters": [
+												{
+													"id": 132,
+													"name": "markup",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string containing the markup to turn into a template. Note: This string must contain the template element as well."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Element"
+											}
+										}
+									]
+								},
+								{
+									"id": 100,
+									"name": "createTextNode",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 101,
+											"name": "createTextNode",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Creates a new Text node.",
+												"returns": "A Text node.\n"
+											},
+											"parameters": [
+												{
+													"id": 102,
+													"name": "text",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string to populate the new Text node."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Text"
+											}
+										}
+									]
+								},
+								{
+									"id": 115,
+									"name": "dispatchEvent",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 116,
+											"name": "dispatchEvent",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Dispatches an event on the document."
+											},
+											"parameters": [
+												{
+													"id": 117,
+													"name": "evt",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The event to dispatch.\n"
+													},
+													"type": {
+														"type": "reference",
+														"name": "Event"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 118,
+									"name": "getComputedStyle",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 119,
+											"name": "getComputedStyle",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Gives the values of all the CSS properties of an element after applying the active stylesheets and resolving any basic computation those values may contain.",
+												"returns": "The computed styles.\n"
+											},
+											"parameters": [
+												{
+													"id": 120,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The Element for which to get the computed style."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Element"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "CSSStyleDeclaration"
+											}
+										}
+									]
+								},
+								{
+									"id": 121,
+									"name": "getElementById",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 122,
+											"name": "getElementById",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Locates an element in the document according to its id.",
+												"returns": "The found element.\n"
+											},
+											"parameters": [
+												{
+													"id": 123,
+													"name": "id",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The id to search the document for."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Element"
+											}
+										}
+									]
+								},
+								{
+									"id": 146,
+									"name": "injectStyles",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 147,
+											"name": "injectStyles",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Injects styles into the destination element, or the document.head if no destination is provided.",
+												"returns": "The Style node that was created.\n"
+											},
+											"parameters": [
+												{
+													"id": 148,
+													"name": "styles",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The css text to injext."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 149,
+													"name": "destination",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "The destination element to inject the css text into. If not specified it will default to the document.head."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Element"
+													}
+												},
+												{
+													"id": 150,
+													"name": "prepend",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "Indicates whether or not the styles should be prepended to the destination. By default they are appended."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "boolean"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Node"
+											}
+										}
+									]
+								},
+								{
+									"id": 127,
+									"name": "nextElementSibling",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 128,
+											"name": "nextElementSibling",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Gets the element that is the next sibling of the provided element.",
+												"returns": "The next sibling Element of the provided Element.\n"
+											},
+											"parameters": [
+												{
+													"id": 129,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The element whose next sibling is being located."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Element"
+											}
+										}
+									]
+								},
+								{
+									"id": 124,
+									"name": "querySelectorAll",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 125,
+											"name": "querySelectorAll",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Performs a query selector on the document and returns all located matches.",
+												"returns": "A list of all matched elements in the document.\n"
+											},
+											"parameters": [
+												{
+													"id": 126,
+													"name": "query",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The query to use in searching the document."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "NodeList"
+											}
+										}
+									]
+								},
+								{
+									"id": 89,
+									"name": "removeEventListener",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 90,
+											"name": "removeEventListener",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Remove an event listener from the document."
+											},
+											"parameters": [
+												{
+													"id": 91,
+													"name": "eventName",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string representing the event type to listen for."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 92,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The function to remove from the event."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function"
+													}
+												},
+												{
+													"id": 93,
+													"name": "capture",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "Specifies whether the listener to be removed was registered as a capturing listener or not.\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "boolean"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 142,
+									"name": "removeNode",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 143,
+											"name": "removeNode",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Removes the specified node from the parent node."
+											},
+											"parameters": [
+												{
+													"id": 144,
+													"name": "node",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The node to remove."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												},
+												{
+													"id": 145,
+													"name": "parentNode",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "The parent node from which the node will be removed.\n"
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 137,
+									"name": "replaceNode",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 138,
+											"name": "replaceNode",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Replaces a node in the parent with a new node."
+											},
+											"parameters": [
+												{
+													"id": 139,
+													"name": "newNode",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The node to replace the old node with."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												},
+												{
+													"id": 140,
+													"name": "node",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The node that is being replaced."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												},
+												{
+													"id": 141,
+													"name": "parentNode",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "The node that the current node is parented to.\n"
+													},
+													"type": {
+														"type": "reference",
+														"name": "Node"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										79,
+										80,
+										83,
+										81,
+										82
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										84,
+										94,
+										133,
+										103,
+										111,
+										106,
+										97,
+										108,
+										130,
+										100,
+										115,
+										118,
+										121,
+										146,
+										127,
+										124,
+										89,
+										142,
+										137
+									]
+								}
+							]
+						},
+						{
+							"id": 40,
+							"name": "Feature",
+							"kind": 256,
+							"kindString": "Interface",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Enables discovery of what features the runtime environment supports."
+							},
+							"children": [
+								{
+									"id": 43,
+									"name": "htmlTemplateElement",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Does the runtime environment support native HTMLTemplateElement?"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 44,
+									"name": "mutationObserver",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Does the runtime environment support native DOM mutation observers?"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 42,
+									"name": "scopedCSS",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Does the runtime environment support the css scoped attribute?"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 41,
+									"name": "shadowDOM",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Does the runtime environment support ShadowDOM?"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "boolean"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										43,
+										44,
+										42,
+										41
+									]
+								}
+							]
+						},
+						{
+							"id": 45,
+							"name": "Performance",
+							"kind": 256,
+							"kindString": "Interface",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The runtime's performance API."
+							},
+							"children": [
+								{
+									"id": 46,
+									"name": "now",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 47,
+											"name": "now",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Gets a DOMHighResTimeStamp.",
+												"returns": "The timestamp, measured in milliseconds, accurate to one thousandth of a millisecond.\n"
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "number"
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										46
+									]
+								}
+							]
+						},
+						{
+							"id": 48,
+							"name": "Platform",
+							"kind": 256,
+							"kindString": "Interface",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Represents the core APIs of the runtime environment."
+							},
+							"children": [
+								{
+									"id": 60,
+									"name": "XMLHttpRequest",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The runtime's XMLHttpRequest API."
+									},
+									"type": {
+										"type": "reference",
+										"name": "XMLHttpRequest"
+									}
+								},
+								{
+									"id": 49,
+									"name": "global",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The runtime environment's global."
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "any"
+									}
+								},
+								{
+									"id": 52,
+									"name": "history",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The runtime's history API."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Object"
+									}
+								},
+								{
+									"id": 51,
+									"name": "location",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The runtime's location API."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Object"
+									}
+								},
+								{
+									"id": 50,
+									"name": "noop",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "A function wich does nothing."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Function"
+									}
+								},
+								{
+									"id": 53,
+									"name": "performance",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "The runtime's performance API"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Performance",
+										"id": 45
+									}
+								},
+								{
+									"id": 68,
+									"name": "addEventListener",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 69,
+											"name": "addEventListener",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Add a global event listener."
+											},
+											"parameters": [
+												{
+													"id": 70,
+													"name": "eventName",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string representing the event type to listen for."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 71,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The function that receives a notification when an event of the specified type occurs."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function"
+													}
+												},
+												{
+													"id": 72,
+													"name": "capture",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "If true, useCapture indicates that the user wishes to initiate capture.\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "boolean"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 61,
+									"name": "eachModule",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 62,
+											"name": "eachModule",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Iterate all modules loaded by the script loader."
+											},
+											"parameters": [
+												{
+													"id": 63,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A callback that will receive each module id along with the module object. Return true to end enumeration.\n"
+													},
+													"type": {
+														"type": "reflection",
+														"declaration": {
+															"id": 64,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 65,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 66,
+																			"name": "key",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "instrinct",
+																				"name": "string"
+																			}
+																		},
+																		{
+																			"id": 67,
+																			"name": "value",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "Object"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "instrinct",
+																		"name": "boolean"
+																	}
+																}
+															]
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 73,
+									"name": "removeEventListener",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 74,
+											"name": "removeEventListener",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Remove a global event listener."
+											},
+											"parameters": [
+												{
+													"id": 75,
+													"name": "eventName",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "A string representing the event type to listen for."
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 76,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The function to remove from the event."
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function"
+													}
+												},
+												{
+													"id": 77,
+													"name": "capture",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"text": "Specifies whether the listener to be removed was registered as a capturing listener or not.\n"
+													},
+													"type": {
+														"type": "instrinct",
+														"name": "boolean"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								},
+								{
+									"id": 54,
+									"name": "requestAnimationFrame",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 55,
+											"name": "requestAnimationFrame",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Registers a function to call when the system is ready to update (repaint) the display.",
+												"returns": "A long integer value, the request id, that uniquely identifies the entry in the callback list.\n"
+											},
+											"parameters": [
+												{
+													"id": 56,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"text": "The function to call."
+													},
+													"type": {
+														"type": "reflection",
+														"declaration": {
+															"id": 57,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 58,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 59,
+																			"name": "animationFrameStart",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "instrinct",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "instrinct",
+																		"name": "void"
+																	}
+																}
+															]
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "number"
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										60,
+										49,
+										52,
+										51,
+										50,
+										53
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										68,
+										61,
+										73,
+										54
+									]
+								}
+							]
+						},
+						{
+							"id": 158,
+							"name": "DOM",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The singleton instance of the Dom API."
+							},
+							"type": {
+								"type": "reference",
+								"name": "Dom",
+								"id": 78
+							}
+						},
+						{
+							"id": 156,
+							"name": "FEATURE",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The singleton instance of the Feature discovery API."
+							},
+							"type": {
+								"type": "reference",
+								"name": "Feature",
+								"id": 40
+							}
+						},
+						{
+							"id": 157,
+							"name": "PLATFORM",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The singleton instance of the Platform API."
+							},
+							"type": {
+								"type": "reference",
+								"name": "Platform",
+								"id": 48
+							}
+						},
+						{
+							"id": 151,
+							"name": "AggregateError",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 152,
+									"name": "AggregateError",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Creates an instance of Error that aggregates and preserves an innerError.",
+										"returns": "The Error instance.\n"
+									},
+									"parameters": [
+										{
+											"id": 153,
+											"name": "message",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "The error message."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 154,
+											"name": "innerError",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "The inner error message to aggregate."
+											},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 155,
+											"name": "skipIfAlreadyAggregate",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "Indicates to not wrap the inner error if it itself already has an innerError."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Error"
+									}
+								}
+							]
+						},
+						{
+							"id": 159,
+							"name": "initializePAL",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 160,
+									"name": "initializePAL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Enables initializing a specific implementation of the Platform Abstraction Layer (PAL)."
+									},
+									"parameters": [
+										{
+											"id": 161,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Allows providing a callback which configures the three PAL singletons with their platform-specific implementations.\n"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 162,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 163,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 164,
+																	"name": "platform",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reference",
+																		"name": "Platform",
+																		"id": 48
+																	}
+																},
+																{
+																	"id": 165,
+																	"name": "feature",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reference",
+																		"name": "Feature",
+																		"id": 40
+																	}
+																},
+																{
+																	"id": 166,
+																	"name": "dom",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reference",
+																		"name": "Dom",
+																		"id": 78
+																	}
+																}
+															],
+															"type": {
+																"type": "instrinct",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "instrinct",
+										"name": "void"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Interfaces",
+							"kind": 256,
+							"children": [
+								78,
+								40,
+								45,
+								48
+							]
+						},
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								158,
+								156,
+								157
+							]
+						},
+						{
+							"title": "Functions",
+							"kind": 64,
+							"children": [
+								151,
+								159
+							]
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Modules",
+					"kind": 2,
+					"children": [
+						39
+					]
+				}
+			]
+		},
+		{
+			"id": 167,
+			"name": "\"jspm_packages/npm/aurelia-polyfills@1.0.0-beta.1.1.4/aurelia-polyfills.d\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "c:/Users/marc/Projects/aurelia-environment/jspm_packages/npm/aurelia-polyfills@1.0.0-beta.1.1.4/aurelia-polyfills.d.ts",
+			"children": [
+				{
+					"id": 168,
+					"name": "\"aurelia-polyfills\"",
+					"kind": 2,
+					"kindString": "Module",
+					"flags": {}
+				}
+			],
+			"groups": [
+				{
+					"title": "Modules",
+					"kind": 2,
+					"children": [
+						168
+					]
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1,
+				31,
+				34,
+				38,
+				167
+			]
+		}
+	]
 }
