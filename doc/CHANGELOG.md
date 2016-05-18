@@ -1,3 +1,9 @@
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/MarcScheib/aurelia-environment/compare/0.1.5...v0.1.6) (2016-05-18)
+
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/MarcScheib/aurelia-environment/compare/0.1.4...v0.1.5) (2016-05-10)
 
