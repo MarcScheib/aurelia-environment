@@ -38,6 +38,21 @@ describe('the parser', () => {
     expect(sut.getEnv()).toEqual(expected);
   });
 
+  it('should strip spaces from vars and values', () => {
+    sut.doParse(`TEST1 = VALUE\nTEST2= VALUE\nTEST3 =VALUE\nTEST4=VALUE\n TEST5 = VALUE\nTEST6  =   VALUE`);
+
+    let expected = {
+      TEST1: 'VALUE',
+      TEST2: 'VALUE',
+      TEST3: 'VALUE',
+      TEST4: 'VALUE',
+      TEST5: 'VALUE',
+      TEST6: 'VALUE'
+    };
+
+    expect(sut.getEnv()).toEqual(expected);
+  });
+
   it('should ignore comments', () => {
     sut.doParse(`#ENV1=value3\n#ENV2=value2\nENV3=value1`);
 
