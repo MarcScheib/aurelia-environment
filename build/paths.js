@@ -8,7 +8,7 @@ emitter.defaultMaxListeners = 20;
 var appRoot = 'src/';
 var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
-module.exports = {
+var paths = {
   root: appRoot,
   source: appRoot + '**/*.js',
   html: appRoot + '**/*.html',
