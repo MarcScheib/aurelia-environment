@@ -58,3 +58,9 @@ exports.es2015 = function () {
   options.presets = ['stage-1'];
   return options;
 };
+
+exports['native-modules'] = function() {
+  var options = exports.base();
+  options.presets[0] = 'es2015-loose-native-modules';
+  return options;
+};
