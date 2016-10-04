@@ -1,4 +1,4 @@
-import {load} from '../../src/index';
+import {load} from '../../src/aurelia-environment';
 
 describe('the environment load routine', () => {
   let originalFetch = window.fetch;

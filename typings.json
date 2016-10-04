@@ -1,0 +1,6 @@
+{
+  "name": "aurelia-environment",
+  "main": "dist/aurelia-environment.d.ts",
+  "dependencies": {
+  }
+}
