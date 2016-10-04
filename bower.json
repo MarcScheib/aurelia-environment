@@ -1,0 +1,21 @@
+{
+  "name": "aurelia-environment",
+  "version": "0.1.6",
+  "description": "An environment plugin for Aurelia.",
+  "keywords": [
+    "aurelia",
+    "environment",
+    "plugin"
+  ],
+  "homepage": "http://aurelia.io",
+  "main": "dist/commonjs/aurelia-environment.js",
+  "moduleType": "node",
+  "license": "MIT",
+  "authors": [
+    "Marc Scheib <marc.scheib@cycrilab.com> (http://cycrilab.com/)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/MarcScheib/aurelia-environment"
+  }
+}
