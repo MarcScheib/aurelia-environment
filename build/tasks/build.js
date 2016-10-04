@@ -149,9 +149,6 @@ gulp.task('build', function(callback) {
     compileToModules.map(function(moduleType) {
       return 'build-html-' + moduleType;
     }),
-    compileToModules.map(function(moduleType) {
-      return 'build-css-' + moduleType;
-    }),
     callback
   );
 });
