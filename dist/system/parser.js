@@ -1,13 +1,11 @@
 'use strict';
 
 System.register([], function (_export, _context) {
+  "use strict";
+
   var Parser;
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
+  
 
   return {
     setters: [],
@@ -20,7 +18,7 @@ System.register([], function (_export, _context) {
         };
 
         function Parser() {
-          _classCallCheck(this, Parser);
+          
 
           this.env = {};
           this.lineNum = 0;
@@ -76,7 +74,7 @@ System.register([], function (_export, _context) {
             throw new Error('Could not parse key value pair from line "' + line + '"');
           }
 
-          var key = pair[0];
+          var key = pair[0].trim();
           var value = this.stripComments(pair[1]);
 
           return {

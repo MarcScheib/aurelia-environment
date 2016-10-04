@@ -1,12 +1,6 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 
-
-var Parser = exports.Parser = function () {
+export var Parser = function () {
   Parser.parse = function parse(content) {
     var parser = new Parser();
     parser.doParse(content);

@@ -70,7 +70,7 @@ var Parser = exports.Parser = function () {
       throw new Error('Could not parse key value pair from line "' + line + '"');
     }
 
-    var key = pair[0];
+    var key = pair[0].trim();
     var value = this.stripComments(pair[1]);
 
     return {

@@ -5,11 +5,7 @@ define(['exports'], function (exports) {
     value: true
   });
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
+  
 
   var Parser = exports.Parser = function () {
     Parser.parse = function parse(content) {
@@ -19,7 +15,7 @@ define(['exports'], function (exports) {
     };
 
     function Parser() {
-      _classCallCheck(this, Parser);
+      
 
       this.env = {};
       this.lineNum = 0;
@@ -75,7 +71,7 @@ define(['exports'], function (exports) {
         throw new Error('Could not parse key value pair from line "' + line + '"');
       }
 
-      var key = pair[0];
+      var key = pair[0].trim();
       var value = this.stripComments(pair[1]);
 
       return {

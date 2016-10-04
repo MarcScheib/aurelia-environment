@@ -48,7 +48,7 @@ export let Parser = class Parser {
       throw new Error('Could not parse key value pair from line "' + line + '"');
     }
 
-    let key = pair[0];
+    let key = pair[0].trim();
     let value = this.stripComments(pair[1]);
 
     return {
