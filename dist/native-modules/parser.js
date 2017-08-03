@@ -1,6 +1,10 @@
+'use strict';
+
+exports.__esModule = true;
 
 
-export var Parser = function () {
+
+var Parser = exports.Parser = function () {
   Parser.parse = function parse(content) {
     var parser = new Parser();
     parser.doParse(content);

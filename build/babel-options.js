@@ -12,7 +12,7 @@ exports.base = function () {
     comments: false,
     compact: false,
     code: true,
-    presets: ['es2015-loose', 'stage-1'],
+    presets: [['es2015', {'loose': true}], 'stage-1'],
     plugins: [
       'syntax-flow',
       'transform-decorators-legacy',
@@ -59,8 +59,8 @@ exports.es2015 = function () {
   return options;
 };
 
-exports['native-modules'] = function() {
+exports['native-modules'] = function () {
   var options = exports.base();
-  options.presets[0] = 'es2015-loose-native-modules';
+  options.presets[0].modules = false;
   return options;
 };

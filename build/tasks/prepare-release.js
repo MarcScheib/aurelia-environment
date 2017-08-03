@@ -12,7 +12,7 @@ gulp.task('bump-version', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('changelog', function() {
+gulp.task('changelog', function () {
   return gulp.src(paths.doc + '/CHANGELOG.md', {
     buffer: false
   }).pipe(changelog({
@@ -21,7 +21,7 @@ gulp.task('changelog', function() {
     .pipe(gulp.dest(paths.doc));
 });
 
-gulp.task('prepare-release', function(callback) {
+gulp.task('prepare-release', function (callback) {
   return runSequence(
     'build',
     'lint',

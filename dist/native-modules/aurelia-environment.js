@@ -1,4 +1,9 @@
-import { Parser } from './parser';
+'use strict';
+
+exports.__esModule = true;
+exports.load = load;
+
+var _parser = require('./parser');
 
 var defaultOptions = {
   path: './',
@@ -7,7 +12,7 @@ var defaultOptions = {
 
 var _options = Object.create(null);
 
-export function load(options) {
+function load(options) {
   if (typeof fetch === 'undefined') {
     throw new Error('aurelia-environment plugin requires a Fetch API implementation.');
   }
@@ -26,7 +31,7 @@ export function load(options) {
         statusText: response.statusText
       });
     }).then(function (text) {
-      var parsedObject = Parser.parse(text);
+      var parsedObject = _parser.Parser.parse(text);
       Object.keys(parsedObject).forEach(function (key) {
         window.env[key] = parsedObject[key];
       });
