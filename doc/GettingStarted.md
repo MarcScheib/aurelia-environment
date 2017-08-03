@@ -52,9 +52,25 @@ export function configure(aurelia) {
     aurelia.start().then(() => aurelia.setRoot());
   });
 }
-
 ```
 
 We simply wrap Aurelia's bootstrapping into the fulfilled Promise of aurelia-environment. This automatically loads an ```aurelia.env``` file from the base directory of the server and the respective env variables. Those are available via ```window.env``` then. For additional configuration, see the [Configuration](https://github.com/MarcScheib/aurelia-environment/blob/master/doc/Configuration.md).
 
 You can now start using the environment variables, e.g. ```console.log(window.env.ENV1)``` will output the value of the entry with key __ENV1__ from the aurelia.env file.
+
+If you are using the ES2017 `async`/`await` syntax, you can simply wait for `load()`:
+
+```javascript
+import {load} from 'aurelia-environment';
+
+export async function configure(aurelia) {
+  await load();
+  
+  aurelia.use
+    .standardConfiguration()
+    .developmentLogging();
+  
+  await aurelia.start();
+  await aurelia.setRoot(PLATFORM.moduleName('app'));
+}
+```

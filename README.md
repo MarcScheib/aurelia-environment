@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/MarcScheib/aurelia-environment.svg?branch=master)](https://travis-ci.org/MarcScheib/aurelia-environment) 
 [![Coverage Status](https://coveralls.io/repos/MarcScheib/aurelia-environment/badge.svg?branch=master&service=github)](https://coveralls.io/github/MarcScheib/aurelia-environment?branch=master)
-[![devDependency Status](https://img.shields.io/david/dev/MarcScheib/aurelia-environment.svg)](https://david-dm.org/MarcScheib/aurelia-environment#info=devDependencies)
+[![Dependency Status](https://img.shields.io/david/MarcScheib/aurelia-environment.svg?style=flat-square)](https://david-dm.org/MarcScheib/aurelia-environment)
+[![devDependency Status](https://img.shields.io/david/dev/MarcScheib/aurelia-environment.svg)](https://david-dm.org/MarcScheib/aurelia-environment?type=dev)
 [![npm Version](https://img.shields.io/npm/v/aurelia-environment.svg)](https://www.npmjs.com/package/aurelia-environment)
 
 A simple .env plugin developed for use with [Aurelia](http://www.aurelia.io/). However, it can be used for any other JavaScript framework.
